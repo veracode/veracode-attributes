@@ -1,6 +1,6 @@
 ﻿/* The MIT License
  *
- * Copyright 2017 Veracode
+ * Copyright 2018 Veracode
  * 
  * Permission is hereby granted, free of charge, to any person obtaining a
  * copy of this software and associated documentation files (the "Software"),
@@ -27,14 +27,97 @@ using System;
 namespace Veracode.Attributes
 {
     [AttributeUsage(AttributeTargets.Method)]
-    public class FilePathCleanserAttribute : Attribute { }
+    public class FilePathCleanserAttribute : Attribute
+    {
+        private string userComment;
+
+        public FilePathCleanserAttribute(string userComment = null)
+        {
+            if (null != userComment)
+            {
+                UserComment = userComment;
+            }
+        }
+        public virtual string UserComment
+        {
+            get { return userComment; }
+            set { userComment = value; }
+        }
+    }
 
     [AttributeUsage(AttributeTargets.Method)]
-    public class SqlQueryCleanserAttribute : Attribute { }
+    public class SqlQueryCleanserAttribute : Attribute
+    {
+        private string userComment;
+
+        public SqlQueryCleanserAttribute(string userComment = null)
+        {
+            if (null != userComment)
+            {
+                UserComment = userComment;
+            }
+        }
+        public virtual string UserComment
+        {
+            get { return userComment; }
+            set { userComment = value; }
+        }
+    }
 
     [AttributeUsage(AttributeTargets.Method)]
-    public class CRLFCleanserAttribute : Attribute { }
+    public class CRLFCleanserAttribute : Attribute
+    {
+        private string userComment;
+
+        public CRLFCleanserAttribute(string userComment = null)
+        {
+            if (null != userComment)
+            {
+                UserComment = userComment;
+            }
+        }
+        public virtual string UserComment
+        {
+            get { return userComment; }
+            set { userComment = value; }
+        }
+    }
 
     [AttributeUsage(AttributeTargets.Method)]
-    public class RedirectUrlCleanserAttribute : Attribute { }
+    public class RedirectUrlCleanserAttribute : Attribute
+    {
+        private string userComment;
+
+        public RedirectUrlCleanserAttribute(string userComment = null)
+        {
+            if (null != userComment)
+            {
+                UserComment = userComment;
+            }
+        }
+        public virtual string UserComment
+        {
+            get { return userComment; }
+            set { userComment = value; }
+        }
+    }
+
+    [AttributeUsage(AttributeTargets.Method)]
+    public class XSSCleanserAttribute : Attribute
+    {
+        private string userComment;
+
+        public XSSCleanserAttribute(string userComment = null)
+        {
+            if (null != userComment)
+            {
+                UserComment = userComment;
+            }
+        }
+        public virtual string UserComment
+        {
+            get { return userComment; }
+            set { userComment = value; }
+        }
+    }
 }
